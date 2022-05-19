@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      Async Redux Project
+      Random User Generator Display Project
     </div>
   );
 }
