@@ -1,9 +1,13 @@
 import React from 'react';
 import './App.css';
 
+import { connect } from 'react-redux';
+
 import UserList from './components/UserList';
 
-function App() {
+function App(props) {
+  const { users } = props;
+
   return (
     <div className="App">
       <h1>Random User Generator Display Project</h1>
@@ -12,4 +16,10 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    users: state.users
+  }
+}
+
+export default connect(mapStateToProps)(App);
