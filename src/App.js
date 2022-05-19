@@ -1,25 +1,16 @@
 import React from 'react';
 import './App.css';
 
-import { connect } from 'react-redux';
-
 import UserList from './components/UserList';
 
-function App(props) {
-  const { users } = props;
+function App() {
 
   return (
     <div className="App">
       <h1>Random User Generator Display Project</h1>
-      <UserList users={users} />
+      <UserList />
     </div>
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    users: state.users
-  }
-}
-
-export default connect(mapStateToProps)(App);
+export default App;
