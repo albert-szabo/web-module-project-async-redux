@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 
 import UserList from './components/UserList';
 
-function App() {
+import { connect } from 'react-redux';
+import { fetchUsers } from './state/actions';
+
+function App(props) {
+  useEffect(() => {
+    fetchUsers();
+  }, [])
 
   return (
     <div className="App">
@@ -13,4 +19,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect(state => state, { fetchUsers })(App);
