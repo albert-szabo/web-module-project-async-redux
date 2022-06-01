@@ -7,9 +7,9 @@ import { connect } from 'react-redux';
 import { fetchUsers } from './state/actions';
 
 function App(props) {
-  useEffect(() => {
-    fetchUsers();
-  }, [])
+  // useEffect(() => {
+  //   props.fetchUsers();
+  // }, [])
 
   return (
     <div className="App">
@@ -19,4 +19,6 @@ function App(props) {
   );
 }
 
-export default connect(state => state, { fetchUsers })(App);
+export default App;
+
+// export default connect(null, { fetchUsers })(App);
