@@ -6,7 +6,11 @@ import UserList from './components/UserList';
 import { connect } from 'react-redux';
 import { fetchUsers } from './state/actions';
 
+import { data1 } from './data/testUsers';
+import { data2 } from './data/testUsers';
+
 function App(props) {
+  const users = data2;
   // useEffect(() => {
   //   props.fetchUsers();
   // }, [])
@@ -14,7 +18,7 @@ function App(props) {
   return (
     <div className="App">
       <h1>Random User Generator Display Project</h1>
-      <UserList />
+      <UserList users={users}/>
     </div>
   );
 }
