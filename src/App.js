@@ -3,12 +3,12 @@ import './App.css';
 
 import UserList from './components/UserList';
 
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 // import { fetchUsers } from './state/actions';
 
 function App(props) {
-  const { users } = props;
-  
+  // const { users } = props;
+
   // useEffect(() => {
   //   props.fetchUsers();
   // }, [])
@@ -16,15 +16,17 @@ function App(props) {
   return (
     <div className="App">
       <h1>Random User Generator Display Project</h1>
-      <UserList users={users}/>
+      <UserList />
     </div>
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    users: state.users
-  }
-}
+// const mapStateToProps = (state) => {
+//   return {
+//     users: state.users
+//   }
+// }
 
-export default connect(mapStateToProps)(App);
+// export default connect(mapStateToProps)(App);
+
+export default App;

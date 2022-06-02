@@ -5,7 +5,7 @@ import { data2 } from '../data/testUsers';
 // import { FETCH_USERS } from './actions';
 
 const initialState = {
-    users: data1
+    users: data2
 }
 
 const reducer = (state = initialState, action) => {
