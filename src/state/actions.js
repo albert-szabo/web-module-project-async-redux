@@ -1,10 +1,10 @@
 export const FETCH_START = 'FETCH_START';
-export const FETCH_USERS = 'FETCH_USERS';
+export const FETCH_SUCCESS = 'FETCH_SUCCESS';
 
 export const fetchStart = () => {
     return({type: FETCH_START});
 }
 
-export const fetchUsers = (users) => {
-    return ({type: FETCH_USERS, payload: users});
+export const fetchSuccess = (users) => {
+    return ({type: FETCH_SUCCESS, payload: users});
 }

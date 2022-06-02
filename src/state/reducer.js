@@ -2,8 +2,7 @@
 import { data1 } from '../data/testUsers';
 import { data2 } from '../data/testUsers';
 
-import { FETCH_START } from './actions';
-import { FETCH_USERS } from './actions';
+import { FETCH_START, FETCH_SUCCESS } from './actions';
 
 const initialState = {
     users: [],
@@ -19,10 +18,12 @@ const reducer = (state = initialState, action) => {
                 loading: true,
                 error: ''
             }
-        case FETCH_USERS:
+        case FETCH_SUCCESS:
             return {
                 ...state,
-                users: action.payload
+                users: action.payload,
+                loading: false,
+                error: ''
             }
         default:
             return (state);

@@ -4,7 +4,7 @@ import './App.css';
 import UserList from './components/UserList';
 
 import { connect } from 'react-redux';
-import { fetchStart } from './state/actions';
+import { fetchStart, fetchSuccess } from './state/actions';
 
 import axios from 'axios';
 
@@ -15,8 +15,7 @@ function App(props) {
     props.fetchStart();
     axios.get('https://randomuser.me/api/?results=25')
       .then(response => {
-        console.log(response);
-        console.log(response.data.results);
+        props.fetchSuccess(response.data.results);
       })
       .catch(error => console.error({error}));
   }, []);
@@ -44,4 +43,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { fetchStart })(App);
+export default connect(mapStateToProps, { fetchStart, fetchSuccess })(App);
