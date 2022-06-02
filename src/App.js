@@ -6,11 +6,19 @@ import UserList from './components/UserList';
 import { connect } from 'react-redux';
 import { fetchStart } from './state/actions';
 
+import axios from 'axios';
+
 function App(props) {
   const { loading, error } = props;
 
   useEffect(() => {
     props.fetchStart();
+    axios.get('https://randomuser.me/api/?results=25')
+      .then(response => {
+        console.log(response);
+        console.log(response.data.results);
+      })
+      .catch(error => console.error({error}));
   }, []);
 
   return (
