@@ -4,13 +4,11 @@ import './App.css';
 import UserList from './components/UserList';
 
 import { connect } from 'react-redux';
-import { fetchUsers } from './state/actions';
-
-import { data1 } from './data/testUsers';
-import { data2 } from './data/testUsers';
+// import { fetchUsers } from './state/actions';
 
 function App(props) {
-  const users = data2;
+  const { users } = props;
+  
   // useEffect(() => {
   //   props.fetchUsers();
   // }, [])
@@ -23,6 +21,10 @@ function App(props) {
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    users: state.users
+  }
+}
 
-// export default connect(null, { fetchUsers })(App);
+export default connect(mapStateToProps)(App);
