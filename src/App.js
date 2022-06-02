@@ -4,20 +4,13 @@ import './App.css';
 import UserList from './components/UserList';
 
 import { connect } from 'react-redux';
-import { fetchStart, fetchSuccess } from './state/actions';
-
-import axios from 'axios';
+import { getUsers } from './state/actions';
 
 function App(props) {
-  const { loading, error } = props;
+  const { loading, error, getUsers } = props;
 
   useEffect(() => {
-    props.fetchStart();
-    axios.get('https://randomuser.me/api/?results=25')
-      .then(response => {
-        props.fetchSuccess(response.data.results);
-      })
-      .catch(error => console.error({error}));
+    getUsers();
   }, []);
 
   return (
@@ -43,4 +36,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { fetchStart, fetchSuccess })(App);
+export default connect(mapStateToProps, { getUsers })(App);
