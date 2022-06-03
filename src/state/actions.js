@@ -11,10 +11,10 @@ export const fetchSuccess = (users) => {
     return ({type: FETCH_SUCCESS, payload: users});
 }
 
-export const getUsers = () => {
+export const getUsers = (numberRequested) => {
     return(dispatch => {
         dispatch(fetchStart());
-        axios.get('https://randomuser.me/api/?results=25')
+        axios.get(`https://randomuser.me/api/?results=${numberRequested}`)
           .then(response => {
             dispatch(fetchSuccess(response.data.results));
           })
