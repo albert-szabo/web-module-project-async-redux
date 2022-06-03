@@ -18,7 +18,7 @@ const UserRequestForm = (props) => {
     }
 
     const isDisabled = () => {
-        if (numberOfUsersRequested.trim().length >= 1 && Number.parseFloat(numberOfUsersRequested) > 0 && Number.isInteger(Number.parseFloat(numberOfUsersRequested))) {
+        if (numberOfUsersRequested.trim().length >= 1 && numberOfUsersRequested.trim().length < 5 && Number.parseFloat(numberOfUsersRequested) > 0 && Number.isInteger(Number.parseFloat(numberOfUsersRequested))) {
             return false
         } else {
             return true
