@@ -8,7 +8,7 @@ const UserList = props => {
 
     return (<div id='userList'>
         {users.map(user => {
-                return (<User user={user} />);
+                return (<User user={user} key={user.login.uuid}/>);
             })}
     </div>)
 }
