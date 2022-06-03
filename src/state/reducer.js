@@ -1,7 +1,4 @@
 
-import { data1 } from '../data/testUsers';
-import { data2 } from '../data/testUsers';
-
 import { FETCH_START, FETCH_SUCCESS } from './actions';
 
 const initialState = {
